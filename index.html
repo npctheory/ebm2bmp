@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload and Display</title>
+    <script src="pako.min.js"></script>
+</head>
+<body>
+
+<h1>Upload and Display .ebm File</h1>
+
+<input type="file" id="fileInput" accept=".ebm" />
+<button onclick="handleFile()">Display Image</button>
+
+<div id="imageContainer"></div>
+
+<script>
+    function handleFile() {
+        const fileInput = document.getElementById('fileInput');
+        const imageContainer = document.getElementById('imageContainer');
+
+        const file = fileInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const inflatedData = inflate(new Uint8Array(e.target.result));
+                const inflatedBlob = new Blob([inflatedData], { type: 'image/bmp' });
+                const inflatedUrl = URL.createObjectURL(inflatedBlob);
+
+                const img = document.createElement('img');
+                img.src = inflatedUrl;
+
+                imageContainer.innerHTML = '';
+                imageContainer.appendChild(img);
+            };
+
+            reader.readAsArrayBuffer(file);
+        } else {
+            alert('Please select a valid .ebm file.');
+        }
+    }
+
+    function inflate(data) {
+        data = pako.inflate(data);
+        return data;
+    }
+</script>
+
+</body>
+</html>
