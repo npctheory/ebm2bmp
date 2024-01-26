@@ -4,7 +4,7 @@ This simple web page allows users to upload a .ebm file for a guild emblem from 
 
 ## Usage
 
-To use the EBM to BMP Converter, simply visit the [GitHub Pages link](https://npctheory.github.io/ebm2bmp/). Once on the page, follow these steps:
+To use the EBM to BMP Converter, simply visit the [[GitHub Pages link](https://npctheory.github.io/ebm2bmp/)](https://npctheory.github.io/ebm2bmp/). Once on the page, follow these steps:
 
 1. Click on the "Choose File" button to select your .ebm file.
 2. Click on the "Display" button to display your file as an image on the page.
