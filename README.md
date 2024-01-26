@@ -1,6 +1,6 @@
 # EBM to BMP Converter
 
-This simple web page allows users to upload a file for a .ebm guild emblem from the MMORPG Ragnarok Online, display it as an image on a webpage, and optionally download it as a BMP file.
+This simple web page allows users to upload a .ebm file for a guild emblem from the MMORPG Ragnarok Online, display it as an image on a webpage, and optionally download it as a BMP file.
 
 ## Usage
 
